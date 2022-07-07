@@ -1,11 +1,13 @@
 import React from "react"
 import {
+  Button,
   NativeBaseProvider,
 } from "native-base"
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import { Detail as DetailScreen, Home as HomeScreen } from './screen'
+import { creeds, Creed } from './constant'
 
 const Stack = createNativeStackNavigator()
 
@@ -19,7 +21,17 @@ export const Main = () => (
         }}
       >
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Detail">
+        <Stack.Screen
+          name="Detail"
+          options={({route}: any) => {
+            const creedDetail = creeds.find((item: Creed) => route.params.creed === item.parameter)
+
+            return {
+              title: creedDetail?.title,
+              headerShown: true,
+            }
+          }}
+        >
           {props => <DetailScreen {...props} />}
         </Stack.Screen>
       </Stack.Navigator>

@@ -9,12 +9,12 @@ import {
   Text,
 } from "native-base"
 
-export const Header = () => {
+export const Header = ({ withHeaderNavigation }: {withHeaderNavigation?: boolean}) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <HStack
-      paddingTop={10}
+      paddingTop={withHeaderNavigation ? 4 : 10}
       paddingX={4}
       paddingBottom={4}
       justifyContent="space-between"
