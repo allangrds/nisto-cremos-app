@@ -1,4 +1,5 @@
 import React from "react"
+import { Button} from 'react-native'
 import {
   Text,
   HStack,
@@ -8,9 +9,13 @@ import {
   ScrollView,
 } from "native-base"
 
-export const Home = () => (
+export const Home = ({ navigation }: any) => (
   <ScrollView>
     <Heading size="lg">aWelcome to NativeBase</Heading>
+    <Button
+      title="Go to Details"
+      onPress={() => navigation.navigate('Detail')}
+    />
     <ToggleDarkMode />
   </ScrollView>
 )
