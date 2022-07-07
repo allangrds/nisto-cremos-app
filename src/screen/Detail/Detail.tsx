@@ -13,7 +13,7 @@ import {
 } from "native-base"
 import YoutubePlayer from "react-native-youtube-iframe"
 
-import { Header } from '../../components'
+import { Header, Loading } from '../../components'
 import { creeds, Creed } from '../../constant'
 
 export const Detail = ({ navigation, route }: any) => {
@@ -85,14 +85,7 @@ export const Detail = ({ navigation, route }: any) => {
               />
             </Box>
           </Box>
-        ) : (
-          <HStack paddingY={20} space={2} justifyContent="center" alignItems="center">
-            <Spinner size="lg" accessibilityLabel="Loading posts" />
-            <Heading color={useColorModeValue('black', 'white')} fontSize="md">
-              Carregando
-            </Heading>
-          </HStack>
-        )
+        ) : <Loading />
       }
     </ScrollView>
   )

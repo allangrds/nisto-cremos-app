@@ -2283,6 +2283,11 @@
   resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
+"@types/debounce-promise@^3.1.1":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@types/debounce-promise/-/debounce-promise-3.1.4.tgz#bf10eead11724e666ea541df1c9d3969677a505b"
+  integrity sha512-9SEVY3nsz+uMN2DwDocftB5TAgZe7D0cOzxxRhpotWs6T4QFqRaTXpXbOSzbk31/7iYcfCkJJPwWGzTxyuGhCg==
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -2679,6 +2684,28 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+awesome-debounce-promise@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/awesome-debounce-promise/-/awesome-debounce-promise-2.1.0.tgz#7c21cadf2eaa1fa0a29449dd4dfdbd5004811e53"
+  integrity sha512-0Dv4j2wKk5BrNZh4jgV2HUdznaeVgEK/WTvcHhZWUElhmQ1RR+iURRoLEwICFyR0S/5VtxfcvY6gR+qSe95jNg==
+  dependencies:
+    "@types/debounce-promise" "^3.1.1"
+    awesome-imperative-promise "^1.0.1"
+    awesome-only-resolves-last-promise "^1.0.3"
+    debounce-promise "^3.1.0"
+
+awesome-imperative-promise@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/awesome-imperative-promise/-/awesome-imperative-promise-1.0.1.tgz#be143d89615b9110ac310345457f37e9791ddac9"
+  integrity sha512-EmPr3FqbQGqlNh+WxMNcF9pO9uDQJnOC4/3rLBQNH9m4E9qI+8lbfHCmHpVAsmGqPJPKhCjJLHUQzQW/RBHRdQ==
+
+awesome-only-resolves-last-promise@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/awesome-only-resolves-last-promise/-/awesome-only-resolves-last-promise-1.0.3.tgz#f2dac3ff7df238e48b818b423483031750f13ef0"
+  integrity sha512-7q4WPsYiD8Omvi/yHL314DkvsD/lM//Z2/KcU1vWk0xJotiV0GMJTgHTpWl3n90HJqpXKg7qX+VVNs5YbQyPRQ==
+  dependencies:
+    awesome-imperative-promise "^1.0.1"
 
 babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
@@ -3292,6 +3319,11 @@ dayjs@^1.8.15:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.3.tgz#4754eb694a624057b9ad2224b67b15d552589258"
   integrity sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==
 
+debounce-promise@^3.1.0:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/debounce-promise/-/debounce-promise-3.1.2.tgz#320fb8c7d15a344455cd33cee5ab63530b6dc7c5"
+  integrity sha512-rZHcgBkbYavBeD9ej6sP56XfG53d51CD4dnaw989YX/nZ/ZJfgRx/9ePKmTNiUiyQvh4mtrMoS3OAWW+yoYtpg==
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -3554,6 +3586,11 @@ escape-html@~1.0.3:
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==
 
+escape-string-regexp@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
+
 escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
@@ -3728,6 +3765,11 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
+
+events@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
+  integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
 exec-sh@^0.3.2:
   version "0.3.6"
@@ -4459,7 +4501,7 @@ intl-messageformat@^9.12.0:
     "@formatjs/icu-messageformat-parser" "2.1.0"
     tslib "^2.1.0"
 
-invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -6214,6 +6256,21 @@ react-native-web@0.17.1:
     inline-style-prefixer "^6.0.0"
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
+
+react-native-webview@11.15.0:
+  version "11.15.0"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.15.0.tgz#b5aea9da579ca17fb9fd324e5202b1b5b8ce9fa8"
+  integrity sha512-0Wv+8qu8XuACx1xZwzc2Yfl+rOvxUouLcPxUKdkhaMVNpwoM5/ePpczCQZ3LpiRnSoEtjaUkfyQHbJQ+x4dDJQ==
+  dependencies:
+    escape-string-regexp "2.0.0"
+    invariant "2.2.4"
+
+react-native-youtube-iframe@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-youtube-iframe/-/react-native-youtube-iframe-2.2.2.tgz#ade1a2e4ead3d539fbb80463f45b59ff1b510b55"
+  integrity sha512-og2KW21kCwAHKcnWoyWWBYC6J2Xtqjjwpghhoy9G6zfwZkr8Ej27BbQIAKM/TheJJUZ5/YUrqsgqAdnFYDx5TQ==
+  dependencies:
+    events "^3.2.0"
 
 react-native@0.64.3:
   version "0.64.3"

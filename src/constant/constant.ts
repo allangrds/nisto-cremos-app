@@ -12,6 +12,7 @@ export type Creed = {
   texts: string[]
   biblical_passages: BiblicalPassages[]
   youtubeId: string
+  tags: string[],
 }
 
 export const creeds: Creed[] = [
@@ -56,6 +57,12 @@ export const creeds: Creed[] = [
         label: '2Pe 1:20, 21',
         passage: 'Sabendo primeiramente isto: que nenhuma profecia da Escritura é de particular interpretação.Porque a profecia nunca foi produzida por vontade de homem algum, mas os homens santos de Deus falaram inspirados pelo Espírito Santo.',
       },
-    ]
+    ],
+    tags: [
+      'bíblia',
+      'sagrada',
+      'escrituras',
+      'sagradas',
+    ],
   },
 ]
