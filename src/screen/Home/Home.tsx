@@ -1,39 +1,20 @@
 import React from "react"
 import { Button} from 'react-native'
 import {
-  Text,
-  HStack,
-  Heading,
-  Switch,
-  useColorMode,
   ScrollView,
+  useColorModeValue,
 } from "native-base"
 
-export const Home = ({ navigation }: any) => (
-  <ScrollView>
-    <Heading size="lg">aWelcome to NativeBase</Heading>
-    <Button
-      title="Go to Details"
-      onPress={() => navigation.navigate('Detail')}
-    />
-    <ToggleDarkMode />
-  </ScrollView>
-)
+import { Header } from '../../components'
 
-// Color Switch Component
-function ToggleDarkMode() {
-  const { colorMode, toggleColorMode } = useColorMode()
+export const Home = ({ navigation }: any) => {
   return (
-    <HStack space={2} alignItems="center">
-      <Text>Dark</Text>
-      <Switch
-        isChecked={colorMode === "light"}
-        onToggle={toggleColorMode}
-        aria-label={
-          colorMode === "light" ? "switch to dark mode" : "switch to light mode"
-        }
+    <ScrollView backgroundColor={useColorModeValue('muted.100', 'muted.900')}>
+      <Header />
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Detail')}
       />
-      <Text>Light</Text>
-    </HStack>
+    </ScrollView>
   )
 }
