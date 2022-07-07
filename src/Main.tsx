@@ -1,40 +1,20 @@
-import React from "react";
+import React from "react"
 import {
-  Text,
-  HStack,
-  Heading,
-  Switch,
-  useColorMode,
   NativeBaseProvider,
-  ScrollView,
-} from "native-base";
-import { NavigationContainer } from '@react-navigation/native';
+} from "native-base"
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+import { Home as HomeScreen } from './screen'
+
+const Stack = createNativeStackNavigator()
 
 export const Main = () => (
   <NativeBaseProvider>
     <NavigationContainer>
-      <ScrollView>
-        <Heading size="lg">aWelcome to NativeBase</Heading>
-        <ToggleDarkMode />
-      </ScrollView>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   </NativeBaseProvider>
 )
-
-// Color Switch Component
-function ToggleDarkMode() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return (
-    <HStack space={2} alignItems="center">
-      <Text>Dark</Text>
-      <Switch
-        isChecked={colorMode === "light"}
-        onToggle={toggleColorMode}
-        aria-label={
-          colorMode === "light" ? "switch to dark mode" : "switch to light mode"
-        }
-      />
-      <Text>Light</Text>
-    </HStack>
-  );
-}

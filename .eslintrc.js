@@ -20,8 +20,10 @@ module.exports = {
   "plugins": [
     "react",
     "@typescript-eslint",
-    "react-native"
+    "react-native",
+    "simple-import-sort"
   ],
   "rules": {
+    "semi": ["error", "never"]
   }
 }
