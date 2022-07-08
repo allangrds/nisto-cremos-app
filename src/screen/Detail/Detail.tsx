@@ -26,7 +26,7 @@ export const Detail = ({ navigation, route }: any) => {
       {
         creedDetail
         ? (
-          <Box paddingX={4} paddingBottom={8}>
+          <Box paddingX={4} paddingBottom={4}>
             <Heading size="md" marginBottom={2} marginTop={4} color={useColorModeValue('black', 'white')}>
               {creedDetail.title}
             </Heading>
@@ -52,6 +52,7 @@ export const Detail = ({ navigation, route }: any) => {
               {
                 creedDetail.biblical_passages.map(biblicalPassage => (
                   <Popover
+                    placement="top"
                     key={biblicalPassage.label}
                     trigger={triggerProps => (
                       <Pressable {...triggerProps}>
@@ -64,21 +65,23 @@ export const Detail = ({ navigation, route }: any) => {
                       </Pressable>
                     )}
                   >
-                    <Popover.Content maxWidth="80%">
+                    <Popover.Content maxWidth="90%" maxHeight={200}>
                       <Popover.Body>
-                        <Text
-                          fontSize="md"
-                          color={useColorModeValue('black', 'white')}
-                        >
-                          { biblicalPassage.passage }
-                        </Text>
+                        <ScrollView>
+                          <Text
+                            fontSize="md"
+                            color={useColorModeValue('black', 'white')}
+                          >
+                            { biblicalPassage.passage }
+                          </Text>
+                        </ScrollView>
                       </Popover.Body>
                     </Popover.Content>
                   </Popover>
                 ))
               }
             </HStack>
-            <Box bg="primary.200">
+            <Box>
               <YoutubePlayer
                 height={160}
                 videoId={creedDetail.youtubeId}
