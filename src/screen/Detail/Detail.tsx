@@ -7,9 +7,9 @@ import {
   Popover,
   Pressable,
   ScrollView,
-  Spinner,
   useColorModeValue,
   Text,
+  VStack,
 } from "native-base"
 import YoutubePlayer from "react-native-youtube-iframe"
 
@@ -81,12 +81,17 @@ export const Detail = ({ navigation, route }: any) => {
                 ))
               }
             </HStack>
-            <Box>
-              <YoutubePlayer
-                height={160}
-                videoId={creedDetail.youtubeId}
-              />
-            </Box>
+            <VStack space={2}>
+              {
+                creedDetail.youtubeIds.map(videoId => (
+                  <YoutubePlayer
+                    key={videoId}
+                    height={160}
+                    videoId={videoId}
+                  />
+                ))
+              }
+            </VStack>
           </Box>
         ) : <Loading />
       }

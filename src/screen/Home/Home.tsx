@@ -68,7 +68,8 @@ export const Home = ({ navigation }: any) => {
             <Pressable
               key={creed.parameter}
               onPress={() => navigation.navigate('Detail', {
-                creed: creed.parameter
+                creed: creed.parameter,
+                id: creed.numbering
               })}
             >
               {({
@@ -86,7 +87,7 @@ export const Home = ({ navigation }: any) => {
                   }}
                 >
                   <Text fontWeight="500" fontSize="md">
-                    {index + 1}. {creed.title}
+                    {creed.numbering}. {creed.title}
                   </Text>
                 </Box>
               )}

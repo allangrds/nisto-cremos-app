@@ -27,7 +27,7 @@ export const Main = () => (
             const creedDetail = creeds.find((item: Creed) => route.params.creed === item.parameter)
 
             return {
-              title: creedDetail?.title,
+              title: `${route.params.id}. ${creedDetail?.title}`,
               headerShown: true,
             }
           }}
