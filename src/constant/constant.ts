@@ -239,4 +239,80 @@ export const creeds: Creed[] = [
       'salvador',
     ],
   },
+  {
+    title: 'O Espírito Santo',
+    description: 'xablau',
+    parameter: CreedEnum.HOLY_SPIRIT,
+    texts: [
+      'Deus, o Espírito Santo, desempenhou uma parte ativa com o Pai e o Filho na criação, encarnação e redenção. Ele é uma pessoa tanto quanto o Pai e o Filho. Inspirou os escritores das Escrituras. Encheu de poder a vida de Cristo. Atrai e convence os seres humanos; e os que se mostram sensíveis são renovados e transformados por Ele à imagem de Deus. Enviado pelo Pai e pelo Filho para estar sempre com seus filhos, Ele concede dons espirituais à igreja, a habilita a dar testemunho de Cristo e, em harmonia com as Escrituras, guia-a em toda a verdade.'
+    ],
+    youtubeId: 'YkKEpO_0g-o',
+    biblical_passages: [
+      {
+        label: 'Gn 1:1, 2',
+        passage: 'No princípio criou Deus o céu e a terra. E a terra era sem forma e vazia; e havia trevas sobre a face do abismo; e o Espírito de Deus se movia sobre a face das águas.'
+      },
+      {
+        label: '2Sm 23:2',
+        passage: 'O Espírito do Senhor falou por mim, e a sua palavra está na minha boca.'
+      },
+      {
+        label: 'Sl 51:11',
+        passage: 'Não me lances fora da tua presença, e não retires de mim o teu Espírito Santo.'
+      },
+      {
+        label: 'Is 61:1',
+        passage: 'O espírito do Senhor DEUS está sobre mim; porque o SENHOR me ungiu, para pregar boas novas aos mansos; enviou-me a restaurar os contritos de coração, a proclamar liberdade aos cativos, e a abertura de prisão aos presos;'
+      },
+      {
+        label: 'Lc 1:35, 4:18',
+        passage: 'E, respondendo o anjo, disse-lhe: Descerá sobre ti o Espírito Santo, e a virtude do Altíssimo te cobrirá com a sua sombra; por isso também o Santo, que de ti há de nascer, será chamado Filho de Deus.[...]O Espírito do Senhor é sobre mim, Pois que me ungiu para evangelizar os pobres. Enviou-me a curar os quebrantados de coração,[...]'
+      },
+      {
+        label: 'Jo 14:16-18,26',
+        passage: 'Mas agora contas os meus passos; porventura não vigias sobre o meu pecado? A minha transgressão está selada num saco, e amontoas as minhas iniqüidades. E, na verdade, caindo a montanha, desfaz-se; e a rocha se remove do seu lugar.[...]Mas aquele Consolador, o Espírito Santo, que o Pai enviará em meu nome, esse vos ensinará todas as coisas, e vos fará lembrar de tudo quanto vos tenho dito.'
+      },
+      {
+        label: 'Jo 15:26',
+        passage: 'Mas, quando vier o Consolador, que eu da parte do Pai vos hei de enviar, aquele Espírito de verdade, que procede do Pai, ele testificará de mim.'
+      },
+      {
+        label: 'Jo 16:7-13',
+        passage: 'Todavia digo-vos a verdade, que vos convém que eu vá; porque, se eu não for, o Consolador não virá a vós; mas, quando eu for, vo-lo enviarei. E, quando ele vier, convencerá o mundo do pecado, e da justiça e do juízo. Do pecado, porque não crêem em mim; Da justiça, porque vou para meu Pai, e não me vereis mais; E do juízo, porque já o príncipe deste mundo está julgado. Ainda tenho muito que vos dizer, mas vós não o podeis suportar agora. Mas, quando vier aquele Espírito de verdade, ele vos guiará em toda a verdade; porque não falará de si mesmo, mas dirá tudo o que tiver ouvido, e vos anunciará o que há de vir.'
+      },
+      {
+        label: 'At 1:8',
+        passage: 'Mas recebereis a virtude do Espírito Santo, que há de vir sobre vós; e ser-me-eis testemunhas, tanto em Jerusalém como em toda a Judéia e Samaria, e até aos confins da terra.'
+      },
+      {
+        label: 'At 5:3',
+        passage: 'Disse então Pedro: Ananias, por que encheu Satanás o teu coração, para que mentisses ao Espírito Santo, e retivesses parte do preço da herdade?'
+      },
+      {
+        label: 'At 10:38',
+        passage: 'Como Deus ungiu a Jesus de Nazaré com o Espírito Santo e com virtude; o qual andou fazendo bem, e curando a todos os oprimidos do diabo, porque Deus era com ele.'
+      },
+      {
+        label: 'Rm 5:5',
+        passage: 'E a esperança não traz confusão, porquanto o amor de Deus está derramado em nossos corações pelo Espírito Santo que nos foi dado.'
+      },
+      {
+        label: '1Co 12:7-11',
+        passage: 'Mas a manifestação do Espírito é dada a cada um, para o que for útil. Porque a um pelo Espírito é dada a palavra da sabedoria; e a outro, pelo mesmo Espírito, a palavra da ciência; E a outro, pelo mesmo Espírito, a fé; e a outro, pelo mesmo Espírito, os dons de curar; E a outro a operação de maravilhas; e a outro a profecia; e a outro o dom de discernir os espíritos; e a outro a variedade de línguas; e a outro a interpretação das línguas. Mas um só e o mesmo Espírito opera todas estas coisas, repartindo particularmente a cada um como quer.'
+      },
+      {
+        label: '2Co 3:18',
+        passage: 'Mas todos nós, com rosto descoberto, refletindo como um espelho a glória do Senhor, somos transformados de glória em glória na mesma imagem, como pelo Espírito do Senhor.'
+      },
+      {
+        label: '2Pe 1:21',
+        passage: 'Porque a profecia nunca foi produzida por vontade de homem algum, mas os homens santos de Deus falaram inspirados pelo Espírito Santo.'
+      },
+    ],
+    tags: [
+      'espírito',
+      'espírito santo',
+      'consolador',
+    ],
+  },
 ]
