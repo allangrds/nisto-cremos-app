@@ -37,26 +37,14 @@ src/
 ├
 ├─ components/
 ├
-├─ hooks/
+├─ constant/
 ├
-├─ lib/
+├─ enum/
 ├
-├─ modules/
-├
-├─ mocks/
-├
-├─ providers/
-├
-├─ routes/
-├
-├─ services/
-├
-├─ test/
-├
-├─ theme/
-├
-├─ types/
-├
-├─ utils/
+├─ screen/
 ├
 ```
+- Components: componentes que são utilizados em mais de um lugar
+- Constant: lista de crenças e suas informações
+- Enum: enum com o nome de cada crença
+- Screen: Telas do aplicativo
