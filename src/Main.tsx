@@ -1,7 +1,10 @@
 import * as React from 'react'
-import { Button, NativeBaseProvider } from 'native-base'
+import { NativeBaseProvider } from 'native-base'
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack'
 
 import { Detail as DetailScreen, Home as HomeScreen } from './screen'
 import { creeds, Creed } from './constant'

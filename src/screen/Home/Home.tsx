@@ -1,7 +1,5 @@
 import * as React from 'react'
 import {
-  Icon,
-  Input,
   ScrollView,
   useColorModeValue,
   VStack,
@@ -9,10 +7,9 @@ import {
   Text,
   Box,
 } from 'native-base'
-import { MaterialIcons } from '@expo/vector-icons'
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
 
-import { Header, Loading } from '../../components'
+import { Header, Loading, SearchInput } from '../../components'
 import { creeds as baseCreeds, Creed } from '../../constant'
 
 export const Home = ({ navigation }: any) => {
@@ -48,24 +45,7 @@ export const Home = ({ navigation }: any) => {
       <Header />
       <Box padding={3}>
         <VStack w="100%" space={5} alignSelf="center">
-          <Input
-            onChangeText={handleSearch}
-            placeholder="Procurar por termo ou crença"
-            width="100%"
-            borderRadius="8"
-            padding="0"
-            fontSize="md"
-            autoCapitalize="none"
-            InputLeftElement={
-              <Icon
-                m="2"
-                ml="3"
-                size="6"
-                color="gray.400"
-                as={<MaterialIcons name="search" />}
-              />
-            }
-          />
+          <SearchInput onChangeText={handleSearch} />
         </VStack>
       </Box>
       {isLoading ? <Loading /> : null}
