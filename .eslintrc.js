@@ -1,29 +1,32 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-native",
-    "simple-import-sort"
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'react-native',
+    'simple-import-sort',
+    'prettier',
   ],
-  "rules": {
-    "semi": ["error", "never"]
-  }
+  rules: {
+    semi: ['error', 'never'],
+    'prettier/prettier': 'error',
+  },
 }
