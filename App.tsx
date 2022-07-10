@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Main } from './src/Main'
+import { Main } from './src/main'
 
 export default function App() {
   return <Main />
