@@ -86,7 +86,7 @@ export const Detail = ({ navigation, route }: any) => {
                 creedDetail.youtubeIds.map(videoId => (
                   <YoutubePlayer
                     key={videoId}
-                    height={160}
+                    height={180}
                     videoId={videoId}
                   />
                 ))
