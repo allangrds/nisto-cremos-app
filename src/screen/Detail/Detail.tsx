@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Button } from 'react-native'
 import {
   Box,
   Heading,
@@ -16,7 +15,7 @@ import YoutubePlayer from 'react-native-youtube-iframe'
 import { Header, Loading } from '../../components'
 import { creeds, Creed } from '../../constant'
 
-export const Detail = ({ navigation, route }: any) => {
+export const Detail = ({ route }: any) => {
   const { creed } = route.params
   const creedDetail = creeds.find((item: Creed) => creed === item.parameter)
 

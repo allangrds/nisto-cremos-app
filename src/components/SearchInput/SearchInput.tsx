@@ -2,7 +2,11 @@ import * as React from 'react'
 import { Icon, Input } from 'native-base'
 import { MaterialIcons } from '@expo/vector-icons'
 
-export const SearchInput = ({ onChangeText }: any) => (
+type Props = {
+  onChangeText: (text: string) => void
+}
+
+export const SearchInput = ({ onChangeText }: Props) => (
   <Input
     onChangeText={onChangeText}
     placeholder="Procurar por termo ou crença"
