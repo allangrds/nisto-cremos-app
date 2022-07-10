@@ -1,2 +1,3 @@
-export { Header } from './Header'
-export { Loading } from './Loading'
+export { Header } from './header'
+export { Loading } from './loading'
+export { SearchInput } from './search-input'

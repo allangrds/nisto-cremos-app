@@ -1,1 +1,1 @@
-export { Creed } from './creed'
+export * from './enum'
