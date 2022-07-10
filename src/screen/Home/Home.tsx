@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 import {
   Icon,
   Input,
@@ -8,7 +8,7 @@ import {
   Pressable,
   Text,
   Box,
-} from "native-base"
+} from 'native-base'
 import { MaterialIcons } from '@expo/vector-icons'
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
 
@@ -30,9 +30,10 @@ export const Home = ({ navigation }: any) => {
       return
     }
 
-    const searchCreeds = () => baseCreeds.filter(creed => (
-      creed.tags.some(tag => tag.toUpperCase() === text.toUpperCase())
-    ))
+    const searchCreeds = () =>
+      baseCreeds.filter((creed) =>
+        creed.tags.some((tag) => tag.toUpperCase() === text.toUpperCase())
+      )
 
     const result = await AwesomeDebouncePromise(() => {
       setIsLoading(false)
@@ -55,45 +56,51 @@ export const Home = ({ navigation }: any) => {
             padding="0"
             fontSize="md"
             autoCapitalize="none"
-            InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />}
+            InputLeftElement={
+              <Icon
+                m="2"
+                ml="3"
+                size="6"
+                color="gray.400"
+                as={<MaterialIcons name="search" />}
+              />
+            }
           />
         </VStack>
       </Box>
-      {
-        isLoading ? <Loading /> : null
-      }
+      {isLoading ? <Loading /> : null}
       <VStack padding={3} space={2}>
-        {
-          creeds.map((creed: Creed, index: number) => (
-            <Pressable
-              key={creed.parameter}
-              onPress={() => navigation.navigate('Detail', {
+        {creeds.map((creed: Creed, index: number) => (
+          <Pressable
+            key={creed.parameter}
+            onPress={() =>
+              navigation.navigate('Detail', {
                 creed: creed.parameter,
-                id: creed.numbering
-              })}
-            >
-              {({
-                isPressed
-              }) => (
-                <Box
-                  borderWidth="1"
-                  borderColor="muted.200"
-                  p="5"
-                  rounded="8"
-                  style={{
-                    transform: [{
-                      scale: isPressed ? 0.96 : 1
-                    }]
-                  }}
-                >
-                  <Text fontWeight="500" fontSize="md">
-                    {creed.numbering}. {creed.title}
-                  </Text>
-                </Box>
-              )}
-            </Pressable>
-          ))
-        }
+                id: creed.numbering,
+              })
+            }
+          >
+            {({ isPressed }) => (
+              <Box
+                borderWidth="1"
+                borderColor="muted.200"
+                p="5"
+                rounded="8"
+                style={{
+                  transform: [
+                    {
+                      scale: isPressed ? 0.96 : 1,
+                    },
+                  ],
+                }}
+              >
+                <Text fontWeight="500" fontSize="md">
+                  {creed.numbering}. {creed.title}
+                </Text>
+              </Box>
+            )}
+          </Pressable>
+        ))}
       </VStack>
     </ScrollView>
   )

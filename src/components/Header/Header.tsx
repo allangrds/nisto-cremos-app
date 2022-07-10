@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from 'react'
 import {
   Box,
   Heading,
@@ -7,9 +7,13 @@ import {
   HStack,
   Switch,
   Text,
-} from "native-base"
+} from 'native-base'
 
-export const Header = ({ withHeaderNavigation }: {withHeaderNavigation?: boolean}) => {
+export const Header = ({
+  withHeaderNavigation,
+}: {
+  withHeaderNavigation?: boolean
+}) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
@@ -20,7 +24,11 @@ export const Header = ({ withHeaderNavigation }: {withHeaderNavigation?: boolean
       justifyContent="space-between"
     >
       <Box>
-        <Heading size="lg" color={useColorModeValue('black', 'white')} fontWeight="400">
+        <Heading
+          size="lg"
+          color={useColorModeValue('black', 'white')}
+          fontWeight="400"
+        >
           Nisto
         </Heading>
         <Heading size="lg" color={useColorModeValue('black', 'white')}>
@@ -31,10 +39,12 @@ export const Header = ({ withHeaderNavigation }: {withHeaderNavigation?: boolean
         <Text>Escuro</Text>
         <Switch
           size="sm"
-          isChecked={colorMode === "light"}
+          isChecked={colorMode === 'light'}
           onToggle={toggleColorMode}
           aria-label={
-            colorMode === "light" ? "switch to dark mode" : "switch to light mode"
+            colorMode === 'light'
+              ? 'switch to dark mode'
+              : 'switch to light mode'
           }
         />
         <Text>Claro</Text>
