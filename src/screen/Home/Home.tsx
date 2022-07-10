@@ -48,40 +48,43 @@ export const Home = ({ navigation }: any) => {
           <SearchInput onChangeText={handleSearch} />
         </VStack>
       </Box>
-      {isLoading ? <Loading /> : null}
-      <VStack padding={3} space={2}>
-        {creeds.map((creed: Creed, index: number) => (
-          <Pressable
-            key={creed.parameter}
-            onPress={() =>
-              navigation.navigate('Detail', {
-                creed: creed.parameter,
-                id: creed.numbering,
-              })
-            }
-          >
-            {({ isPressed }) => (
-              <Box
-                borderWidth="1"
-                borderColor="muted.200"
-                p="5"
-                rounded="8"
-                style={{
-                  transform: [
-                    {
-                      scale: isPressed ? 0.96 : 1,
-                    },
-                  ],
-                }}
-              >
-                <Text fontWeight="500" fontSize="md">
-                  {creed.numbering}. {creed.title}
-                </Text>
-              </Box>
-            )}
-          </Pressable>
-        ))}
-      </VStack>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <VStack padding={3} space={2}>
+          {creeds.map((creed: Creed) => (
+            <Pressable
+              key={creed.parameter}
+              onPress={() =>
+                navigation.navigate('Detail', {
+                  creed: creed.parameter,
+                  id: creed.numbering,
+                })
+              }
+            >
+              {({ isPressed }) => (
+                <Box
+                  borderWidth="1"
+                  borderColor="muted.200"
+                  p="5"
+                  rounded="8"
+                  style={{
+                    transform: [
+                      {
+                        scale: isPressed ? 0.96 : 1,
+                      },
+                    ],
+                  }}
+                >
+                  <Text fontWeight="500" fontSize="md">
+                    {creed.numbering}. {creed.title}
+                  </Text>
+                </Box>
+              )}
+            </Pressable>
+          ))}
+        </VStack>
+      )}
     </ScrollView>
   )
 }
