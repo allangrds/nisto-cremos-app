@@ -1,11 +1,12 @@
 import * as React from 'react'
 import {
+  Box,
+  FlatList,
+  Pressable,
   ScrollView,
   useColorModeValue,
   VStack,
-  Pressable,
   Text,
-  Box,
 } from 'native-base'
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
 
@@ -51,39 +52,44 @@ export const Home = ({ navigation }: any) => {
       {isLoading ? (
         <Loading />
       ) : (
-        <VStack padding={3} space={2}>
-          {creeds.map((creed: Creed) => (
-            <Pressable
-              key={creed.parameter}
-              onPress={() =>
-                navigation.navigate('Detail', {
-                  creed: creed.parameter,
-                  id: creed.numbering,
-                })
-              }
-            >
-              {({ isPressed }) => (
-                <Box
-                  borderWidth="1"
-                  borderColor="muted.200"
-                  p="5"
-                  rounded="8"
-                  style={{
-                    transform: [
-                      {
-                        scale: isPressed ? 0.96 : 1,
-                      },
-                    ],
-                  }}
-                >
-                  <Text fontWeight="500" fontSize="md">
-                    {creed.numbering}. {creed.title}
-                  </Text>
-                </Box>
-              )}
-            </Pressable>
-          ))}
-        </VStack>
+        <Box padding={3}>
+          <FlatList
+            data={creeds}
+            keyExtractor={item => item.title}
+            renderItem={({ item: creed }) => (
+              <Pressable
+                key={creed.parameter}
+                onPress={() =>
+                  navigation.navigate('Detail', {
+                    creed: creed.parameter,
+                    id: creed.numbering,
+                  })
+                }
+                marginBottom={3}
+              >
+                {({ isPressed }) => (
+                  <Box
+                    borderWidth="1"
+                    borderColor="muted.200"
+                    p="5"
+                    rounded="8"
+                    style={{
+                      transform: [
+                        {
+                          scale: isPressed ? 0.96 : 1,
+                        },
+                      ],
+                    }}
+                  >
+                    <Text fontWeight="500" fontSize="md">
+                      {creed.numbering}. {creed.title}
+                    </Text>
+                  </Box>
+                )}
+              </Pressable>
+            )}
+          />
+        </Box>
       )}
     </ScrollView>
   )
