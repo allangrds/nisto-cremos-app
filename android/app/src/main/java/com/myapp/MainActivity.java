@@ -1,4 +1,4 @@
-package com.myapp;
+package com.nistocremos;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
