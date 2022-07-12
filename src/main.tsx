@@ -20,6 +20,18 @@ export const Main = () => (
         }}
       >
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Detail"
+          options={({ route }: any) => {
+
+            return {
+              title: `${route.params.key}. ${route.params.name}`,
+              headerShown: true,
+            }
+          }}
+        >
+          {(props) => <DetailScreen {...props} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   </NativeBaseProvider>

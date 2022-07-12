@@ -35,7 +35,8 @@ export const Home = ({ navigation }: any) => {
                     key={creed.name}
                     onPress={() =>
                       navigation.navigate('Detail', {
-                        creed: creed.name,
+                        name: creed.name,
+                        key: creed.key,
                       })
                     }
                     marginBottom={3}
