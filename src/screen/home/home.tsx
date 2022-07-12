@@ -28,6 +28,7 @@ export const Home = ({ navigation }: any) => {
           : (
             <Box padding={3}>
               <FlatList
+                ListFooterComponent={<Box marginBottom={180}/>}
                 data={data}
                 keyExtractor={item => item.name}
                 renderItem={({ item: creed }) => (
