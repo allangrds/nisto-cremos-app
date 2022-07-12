@@ -33,7 +33,6 @@ export const Home = ({ navigation }: any) => {
                 keyExtractor={item => item.name}
                 renderItem={({ item: creed }) => (
                   <Pressable
-                    key={creed.name}
                     onPress={() =>
                       navigation.navigate('Detail', {
                         name: creed.name,
