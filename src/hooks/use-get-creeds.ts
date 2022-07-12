@@ -28,7 +28,6 @@ export const useGetCreeds = () => {
   }
 
   React.useEffect(() => {
-    setIsLoading(true)
     const subscriber = getAllCreeds()
 
     return () => subscriber()

@@ -3,7 +3,6 @@ import {
   Box,
   FlatList,
   Pressable,
-  ScrollView,
   useColorModeValue,
   VStack,
   Text,
@@ -15,7 +14,6 @@ import { useGetCreeds } from '../../hooks'
 export const Home = ({ navigation }: any) => {
   const [data, isLoading, searchCreeds] = useGetCreeds()
 
-  console.log(data)
   return (
     <Box height="100%" backgroundColor={useColorModeValue('white', 'muted.900')}>
       <Header />
