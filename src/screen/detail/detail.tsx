@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {
   Box,
+  FlatList,
   Heading,
   HStack,
   ScrollView,
@@ -40,11 +41,24 @@ export const Detail = ({ route }: any) => {
               </Text>
               <HStack
                 marginBottom={4}
-                marginTop={4}
+                marginTop={2}
                 flexDirection="row"
                 flexWrap="wrap"
                 space={2}
               >
+                {
+                  data.biblical_passages && data.biblical_passages.length > 0
+                  ? (
+                    data.biblical_passages.map(biblicalPassage => (
+                      <Text
+                        fontSize="lg"
+                        fontWeight="bold"
+                      >
+                        {biblicalPassage.label}
+                      </Text>
+                    ))
+                  ) : null
+                }
               </HStack>
               {
                 data.youtubeIds && data.youtubeIds.length > 0
@@ -58,6 +72,28 @@ export const Detail = ({ route }: any) => {
                   ))
                 ) : null
               }
+              <Heading
+                size="md"
+                marginBottom={2}
+                marginTop={4}
+                color={useColorModeValue('black', 'white')}
+              >
+                Passagens
+              </Heading>
+              <FlatList
+                data={data.biblical_passages}
+                keyExtractor={item => item.label}
+                renderItem={({ item }) => (
+                  <Box marginBottom={3}>
+                    <Text fontSize="lg" fontWeight="bold">
+                      {item.label}
+                    </Text>
+                    <Text fontSize="md">
+                      {item.passage}
+                    </Text>
+                  </Box>
+                )}
+              />
             </Box>
           )
       }
