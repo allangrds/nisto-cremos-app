@@ -11,13 +11,14 @@ export const useGetCreeds = () => {
 
     return firestore()
       .collection('crencas')
+      .orderBy("id", "asc")
       .onSnapshot(querySnapshot => {
         let creeds: any = []
         querySnapshot.forEach(documentSnapshot => {
           const data = documentSnapshot.data()
 
           creeds.push({
-            key: documentSnapshot.id,
+            key: documentSnapshot.data().id,
             name: data.name,
           })
         })
@@ -55,7 +56,7 @@ export const useGetCreeds = () => {
             const data = doc.data()
 
             creeds.push({
-              key: doc.id,
+              key: doc.data().id,
               name: data.name,
             })
           })

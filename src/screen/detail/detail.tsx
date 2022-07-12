@@ -51,6 +51,7 @@ export const Detail = ({ route }: any) => {
                   ? (
                     data.biblical_passages.map(biblicalPassage => (
                       <Text
+                        key={biblicalPassage.label}
                         fontSize="lg"
                         fontWeight="bold"
                       >
