@@ -8,6 +8,8 @@ type Props = {
 export const SearchInput = ({ onChangeText }: Props) => (
   <Input
     onChangeText={onChangeText}
+    borderColor="muted.200"
+    placeholderTextColor="muted.400"
     placeholder="Digite sua pesquisa..."
     width="100%"
     borderRadius="8"
