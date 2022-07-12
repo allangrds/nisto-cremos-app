@@ -7,7 +7,7 @@ import {
   useColorModeValue,
   Text,
 } from 'native-base'
-// import YoutubePlayer from 'react-native-youtube-iframe'
+import YoutubePlayer from 'react-native-youtube-iframe'
 
 import { Header, Loading } from '../../components'
 import { useGetCreed } from '../../hooks'
@@ -46,6 +46,18 @@ export const Detail = ({ route }: any) => {
                 space={2}
               >
               </HStack>
+              {
+                data.youtubeIds && data.youtubeIds.length > 0
+                ? (
+                  data.youtubeIds.map((videoId: string) => (
+                    <YoutubePlayer
+                      key={videoId}
+                      height={213}
+                      videoId={videoId}
+                    />
+                  ))
+                ) : null
+              }
             </Box>
           )
       }
