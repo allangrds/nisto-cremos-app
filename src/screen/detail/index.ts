@@ -1,1 +1,1 @@
-export * from './detail'
+export { Detail } from './detail'

@@ -1,93 +1,110 @@
 import * as React from 'react'
 import {
   Box,
+  FlatList,
   Heading,
   HStack,
-  Popover,
-  Pressable,
   ScrollView,
   useColorModeValue,
   Text,
-  VStack,
 } from 'native-base'
 import YoutubePlayer from 'react-native-youtube-iframe'
 
 import { Header, Loading } from '../../components'
-import { creeds, Creed } from '../../constant'
+import { useGetCreed } from '../../hooks'
 
 export const Detail = ({ route }: any) => {
-  const { creed } = route.params
-  const creedDetail = creeds.find((item: Creed) => creed === item.parameter)
+  const [data, isLoading] = useGetCreed(route.params.name)
 
   return (
-    <ScrollView backgroundColor={useColorModeValue('white', 'muted.900')}>
-      <Header withHeaderNavigation />
-      {creedDetail ? (
-        <Box paddingX={4} paddingBottom={4}>
-          <Heading
-            size="md"
-            marginBottom={2}
-            marginTop={4}
-            color={useColorModeValue('black', 'white')}
-          >
-            {creedDetail.title}
-          </Heading>
-          {creedDetail.texts.map((text) => (
-            <Text
-              lineHeight={28}
-              key={text.substring(0, 10)}
-              fontSize="md"
-              color={useColorModeValue('black', 'white')}
-            >
-              {text}
-            </Text>
-          ))}
-          <HStack
-            marginBottom={4}
-            marginTop={4}
-            flexDirection="row"
-            flexWrap="wrap"
-            space={2}
-          >
-            {creedDetail.biblical_passages.map((biblicalPassage) => (
-              <Popover
-                placement="top"
-                key={biblicalPassage.label}
-                trigger={(triggerProps) => (
-                  <Pressable {...triggerProps}>
-                    <Text
-                      fontSize="lg"
-                      color={useColorModeValue('muted.400', 'muted.200')}
-                    >
-                      {biblicalPassage.label}
-                    </Text>
-                  </Pressable>
-                )}
-              >
-                <Popover.Content maxWidth="90%" maxHeight={200}>
-                  <Popover.Body>
-                    <ScrollView>
+    <>
+      <Box backgroundColor={useColorModeValue('white', 'muted.900')}>
+        <Header withHeaderNavigation />
+        {
+          isLoading
+            ? <Loading />
+            : (
+              <Box paddingX={4} paddingBottom={4}>
+                <FlatList
+                  ListFooterComponent={<Box marginBottom={180} />}
+                  ListHeaderComponent={(
+                    <>
+                      <Heading
+                        size="md"
+                        marginBottom={2}
+                        marginTop={4}
+                        color={useColorModeValue('black', 'white')}
+                      >
+                        {data.name}
+                      </Heading>
                       <Text
+                        lineHeight={28}
                         fontSize="md"
                         color={useColorModeValue('black', 'white')}
                       >
-                        {biblicalPassage.passage}
+                        {data.text}
                       </Text>
-                    </ScrollView>
-                  </Popover.Body>
-                </Popover.Content>
-              </Popover>
-            ))}
-          </HStack>
-          <VStack space={2}>
-            {creedDetail.youtubeIds.map((videoId) => (
-              <YoutubePlayer key={videoId} height={180} videoId={videoId} />
-            ))}
-          </VStack>
-        </Box>
-      ) : (
-        <Loading />
-      )}
-    </ScrollView>
+                      <HStack
+                        marginBottom={4}
+                        marginTop={2}
+                        flexDirection="row"
+                        flexWrap="wrap"
+                        space={2}
+                      >
+                        {
+                          data.biblical_passages && data.biblical_passages.length > 0
+                            ? (
+                              data.biblical_passages.map(biblicalPassage => (
+                                <Text
+                                  key={biblicalPassage.label}
+                                  fontSize="lg"
+                                  fontWeight="bold"
+                                >
+                                  {biblicalPassage.label}
+                                </Text>
+                              ))
+                            ) : null
+                        }
+                      </HStack>
+                      {
+                        data.youtubeIds && data.youtubeIds.length > 0
+                          ? (
+                            data.youtubeIds.map((videoId: string) => (
+                              <YoutubePlayer
+                                key={videoId}
+                                height={213}
+                                videoId={videoId}
+                              />
+                            ))
+                          ) : null
+                      }
+                      <Heading
+                        size="md"
+                        marginBottom={2}
+                        marginTop={4}
+                        color={useColorModeValue('black', 'white')}
+                      >
+                        Passagens
+                      </Heading>
+                    </>
+                  )}
+                  data={data.biblical_passages}
+                  keyExtractor={item => item.label}
+                  renderItem={({ item }) => (
+                    <Box marginBottom={3}>
+                      <Text fontSize="lg" fontWeight="bold">
+                        {item.label}
+                      </Text>
+                      <Text fontSize="md">
+                        {item.passage}
+                      </Text>
+                    </Box>
+                  )}
+                />
+              </Box>
+            )
+        }
+      </Box>
+    </>
   )
 }

@@ -9,11 +9,11 @@ import {
   Text,
 } from 'native-base'
 
-export const Header = ({
-  withHeaderNavigation,
-}: {
+type Props = {
   withHeaderNavigation?: boolean
-}) => {
+}
+
+export const Header = ({ withHeaderNavigation }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (

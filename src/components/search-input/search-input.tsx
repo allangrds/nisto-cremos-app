@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Icon, Input } from 'native-base'
-import { MaterialIcons } from '@expo/vector-icons'
 
 type Props = {
   onChangeText: (text: string) => void
@@ -9,20 +8,14 @@ type Props = {
 export const SearchInput = ({ onChangeText }: Props) => (
   <Input
     onChangeText={onChangeText}
-    placeholder="Procurar por termo ou crença"
+    borderColor="muted.200"
+    placeholderTextColor="muted.400"
+    placeholder="Digite sua pesquisa..."
     width="100%"
     borderRadius="8"
-    padding="0"
+    paddingY="4"
+    paddingLeft="4"
     fontSize="md"
     autoCapitalize="none"
-    InputLeftElement={
-      <Icon
-        m="2"
-        ml="3"
-        size="6"
-        color="gray.400"
-        as={<MaterialIcons name="search" />}
-      />
-    }
   />
 )
